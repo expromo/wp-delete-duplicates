@@ -6,19 +6,12 @@
 		generate thousands of extra duplicate copies of each media item.
 	*/
 
-	## general config
-
-		ini_set('error_reporting', E_ALL);
-		mb_internal_encoding('UTF-8');
-		setlocale(LC_ALL,"en_EN.UTF-8");
-
 	## database config
 
 		$cfg['servers']['host'] = 'localhost';
-		$cfg['servers']['db'] = 'ccibenic_wptest';
-		$cfg['servers']['baseURL'] = 'http://localhost/';
-		$cfg['servers']['user'] = 'ccibenic_wpfr';
-		$cfg['servers']['password'] = 'D9w5HzTmCc2Xp5Pd';
+		$cfg['servers']['db'] = 'YOUR_DATABASE_NAME';
+		$cfg['servers']['user'] = 'YOUR_USERNAME';
+		$cfg['servers']['password'] = 'YOUR_PASSWORD';
 	
 		if (!isset($conn )) $conn = mysqli_connect(
 			$cfg['servers']['host'], 
