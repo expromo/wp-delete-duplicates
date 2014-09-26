@@ -4,6 +4,14 @@
 		Removes duplicate entries of Medias on Wordpress 4.0
 		This cleans up duplicates created by a WPML.ORG bug that can 
 		generate thousands of extra duplicate copies of each media item.
+
+		https://code.google.com/p/wp-delete-duplicates/source/browse/deleteDuplicates.php
+
+		## Instructions
+
+			1) First configure the database access by inserting name of database, user, and password
+			2) Optional : If your wordpress database prefix is anything other than "wp_" (default value), run the function at the end of the script with the name of your posts table name. Something like : deleteDuplicates("yourPrefix_posts");
+			else just run the function without parameters.
 	*/
 
 	## database config
@@ -18,7 +26,7 @@
 			$cfg['servers']['user'], 
 			$cfg['servers']['password'],
 			$cfg['servers']['db']) 
-				OR die(mysqli_error());
+				OR die(mysqli_error($conn));
 
 		if (!mysqli_set_charset($conn, 'utf8')) echo "mysqli_set_charset fail";
 
